@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Mapping Twitter</title>
 
         <!-- Bootstrap libraries -->
@@ -15,6 +15,23 @@
         <!-- Other CSS -->
         <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/default.css" type="text/css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+        <style>
+            html, body, #map
+            {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            body
+            {
+                background-color: #FFFFFF;
+                overflow: hidden;
+                font-family: "Trebuchet MS";
+            }
+        </style>
     </head>
 
     <body>
@@ -45,7 +62,7 @@
                     </div>
 
                     <!-- The map section -->
-                    <div class="map-container">
+                    <div class="map">
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-2 col-xs-1"></div>
@@ -73,5 +90,7 @@
         </footer>
 
         <script src="js/default.js"></script>
+
+        <script src="http://js.arcgis.com/3.14/"></script>
     </body>
 </html>

@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/getTweet/', function(req, res) {
-  res.send('jfasifjsaijsaidji');
+  res.render('map.ejs');
 });
 
 app.use(express.static(__dirname + '/'));
@@ -34,4 +34,4 @@ app.use(express.static(__dirname + '/'));
 
 
 
-app.listen(80);
+app.listen(8080);

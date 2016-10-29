@@ -37,11 +37,11 @@ $(document).ready(function ()
 function getMapData(query)
 {
     $.get({
-        url: 'http://45.55.90.137/getTweet/',
+        url: 'http://127.0.0.1:8080/getTweet/',
         data: query,
         success: function (response)
         {
-            $('.map-container').html(response);
+            $('.map').html(response);
         },
         error: function ()
         {

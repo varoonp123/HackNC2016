@@ -30,8 +30,7 @@
           basemap: "streets",
           center: [-95.625, 39.243],
           zoom: 3,
-          slider: true,
-          showLabels: true
+          slider: true
         });
         map.on("load", addFeatureLayer);
 
@@ -248,17 +247,12 @@
             var posNum = data[i]['Num_Positive_Tweets'];
             var negNum = data[i]['Num_Negative_Tweets'];
 
-            if (posNum == 0 && negNum == 0) {
-              var b = 210;
-              var g = 210;
-              var r = 210;
-              var a = 1;
-          } else {
+            // if (posNum )
+            var a = (1 - 1 / (posNum + negNum));
+            console.log("demo" + a);
             var b = Math.round(200 * posNum / (posNum + negNum));
             var g = 0;
             var r = Math.round(200 * negNum / (posNum + negNum));
-            var a = (1 - 1 / (posNum + negNum));
-          }
 
             renderer.addValue(stateName, new SimpleFillSymbol().setColor(new Color([r, g, b, a])));
           }
@@ -268,10 +262,6 @@
             mode: FeatureLayer.MODE_ONDEMAND,
             outFields: ["STATE_NAME"]
           });
-
-          var statesLabel = new TextSymbol().setColor(new Color([128,128,128,0.5]));
-          statesLabel.font.setSize('14px');
-          statesLabel.font.setFamily('Roboto');
           
           featureLayer.setRenderer(renderer);
           map.addLayer(featureLayer);
