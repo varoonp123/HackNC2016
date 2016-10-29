@@ -1,0 +1,1 @@
+plainEmojiDict = {"<3":"good", "<\3":'bad','=)':'good','=D':'good',':D':'good',':)':'good',':(':'bad',":/":'bad',"< 3":"good", "< \3":'bad','= )':'good','= D':'good',': D':'good',': )':'good',': (':'bad',": /":'bad',":))":'good',':((':'bad'}
