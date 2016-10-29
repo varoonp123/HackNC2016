@@ -1,7 +1,7 @@
 /* The navbar */
 .navbar-default {
   background-color: white;
-  border-bottom: 1px solid #E3E3E3;
+  border-bottom: none;
   font-family: "Roboto", sans-serif;
   font-size: 40px;
   padding: 10px 0 10px 0; }
@@ -89,11 +89,21 @@
       .footer p a:hover, .footer p a:focus {
         color: white; }
 
-.input-container {
-  padding-top: 35%; }
+.fa-search {
+  cursor: hand;
+  color: #808080;
+  font-size: 30px;
+  vertical-align: middle;
+  padding-left: 10px;
+  line-height: 50px;
+  min-height: 50px; }
+
+.no-padding {
+  padding: 0; }
 
 input {
-  border: 2px solid #E5E5E5;
+  border: none;
+  border-bottom: 2px solid #E5E5E5;
   color: #808080;
   font-size: 20px;
   padding: 10px 15px;

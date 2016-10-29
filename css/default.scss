@@ -13,6 +13,7 @@ $footerTextSize: 14px;
 
 $inputBorder: #E5E5E5;
 $inputColor: #808080;
+$inputFontSize: 20px;
 
 $navBg: white;
 $navBgHighlight: white;
@@ -25,7 +26,7 @@ $navTextSize: 40px;
 .navbar-default
 {
     background-color: $navBg;
-    border-bottom: 1px solid $navBorder;
+    border-bottom: none;
     font-family: $fontNav;
     font-size: $navTextSize;
     padding: 10px 0 10px 0;
@@ -225,16 +226,28 @@ $navTextSize: 40px;
     }
 }
 
-.input-container
+.fa-search
 {
-    padding-top: 35%;
+    cursor: hand;
+    color: $inputColor;
+    font-size: 30px;
+    vertical-align: middle;
+    padding-left: 10px;
+    line-height: 50px;
+    min-height: 50px;
+}
+
+.no-padding
+{
+    padding: 0;
 }
 
 input
 {
-    border: 2px solid $inputBorder;
+    border: none;
+    border-bottom: 2px solid $inputBorder;
     color: $inputColor;
-    font-size: 20px;
+    font-size: $inputFontSize;
     padding: 10px 15px;
     width: 100%;
 
