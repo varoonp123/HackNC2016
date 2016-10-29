@@ -90,7 +90,7 @@
         color: white; }
 
 .fa-search {
-  cursor: hand;
+  cursor: pointer;
   color: #808080;
   font-size: 30px;
   vertical-align: middle;
