@@ -1,7 +1,7 @@
 $(document).ready(function ()
 {
     var search = $('input');
-    var searchContainer = $('.input-container');
+    var searchButton = $('#search');
     var defaultVal = 'Enter map query';
 
     search.val(defaultVal);
@@ -16,6 +16,36 @@ $(document).ready(function ()
         {
             if (search.val() == '')
                 search.val(defaultVal);
+        },
+        keyup: function (e)
+        {
+            if (e.which == 13)
+            {
+                getMapData(search.val());
+            }
+        }
+    });
+
+    searchButton.on({
+        click: function ()
+        {
+            getMapData(search.val());
         }
     });
 });
+
+function getMapData(query)
+{
+    $.get({
+        url: 'localhost:80',
+        data: query,
+        success: function (response)
+        {
+            console.log(response);
+        },
+        error: function ()
+        {
+
+        }
+    })
+}
