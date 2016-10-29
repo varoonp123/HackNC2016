@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var PythonShell = require('python-shell');
+var cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -10,13 +12,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs');
 
-app.get('*', function(req, res) {
-  console.log(req);
-  next();
-});
+// app.get('*', function(req, res) {
+//   console.log(req);
+//   next();
+// });
 
 app.get('/', function(req, res) {
   res.render('index.ejs');
+});
+
+app.get('/getTweet/', function(req, res) {
+  res.send('jfasifjsaijsaidji');
 });
 
 app.use(express.static(__dirname + '/'));

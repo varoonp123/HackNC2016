@@ -37,7 +37,7 @@ $(document).ready(function ()
 function getMapData(query)
 {
     $.get({
-        url: 'http://localhost:8080/',
+        url: 'http://45.55.90.137/getTweet/',
         data: query,
         success: function (response)
         {
