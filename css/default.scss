@@ -1,0 +1,261 @@
+$dropDown: true;
+
+$fontColor: black;
+$fontHeader: 'Abhaya Libre', serif;
+$fontMain: 'Open Sans', sans-serif;
+$fontNav: 'Roboto', sans-serif;
+
+$footerBg: #383838;
+$footerHeight: 60px;
+$footerText: #E3E3E3;
+$footerTextHighlight: white;
+$footerTextSize: 14px;
+
+$inputBorder: #E5E5E5;
+$inputColor: #808080;
+
+$navBg: white;
+$navBgHighlight: white;
+$navBorder: #E3E3E3;
+$navText: #808080;
+$navTextHighlight: black;
+$navTextSize: 40px;
+
+/* The navbar */
+.navbar-default
+{
+    background-color: $navBg;
+    border-bottom: 1px solid $navBorder;
+    font-family: $fontNav;
+    font-size: $navTextSize;
+    padding: 10px 0 10px 0;
+
+    .navbar-brand
+    {
+        color: $navText;
+        font-family: $fontHeader;
+        font-size: 40px;
+        padding: 17px 15px 15px 23px;
+
+        &:hover,
+        &:focus
+        {
+            color: $navTextHighlight;
+        }
+    }
+
+    .navbar-text
+    {
+        color: $navText;
+    }
+
+    .navbar-nav
+    {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+
+        > li
+        {
+            > a
+            {
+                color: $navText;
+
+                &:hover,
+                &:focus
+                {
+                    color: $navTextHighlight;
+                }
+            }
+
+            @if $dropDown
+            {
+                > .dropdown-menu
+                {
+                    background-color: $navBg;
+
+                    > li
+                    {
+                        > a
+                        {
+                            color: $navText;
+
+                            &:hover,
+                            &:focus
+                            {
+                                color: $navTextHighlight;
+                                background-color: $navBgHighlight;
+                            }
+                        }
+
+                        > .divider
+                        {
+                            background-color: $navBgHighlight;
+                        }
+                    }
+                }
+            }
+        }
+
+        @if $dropDown
+        {
+            .open .dropdown-menu > .active
+            {
+                > a,
+                > a:hover,
+                > a:focus
+                {
+                    color: $navTextHighlight;
+                    background-color: $navBgHighlight;
+                }
+            }
+        }
+
+        > .active
+        {
+            > a,
+            > a:hover,
+            > a:focus
+            {
+                color: $navTextHighlight;
+                background-color: $navBgHighlight;
+            }
+        }
+
+        > .open
+        {
+            > a,
+            > a:hover,
+            > a:focus
+            {
+                color: $navTextHighlight;
+                background-color: $navBgHighlight;
+            }
+        }
+    }
+
+    .navbar-toggle
+    {
+        border-color: $navBgHighlight;
+
+        &:hover,
+        &:focus
+        {
+            background-color: $navBgHighlight;
+        }
+
+        .icon-bar
+        {
+            background-color: $navText;
+        }
+    }
+
+    .navbar-collapse,
+    .navbar-form
+    {
+        border-color: $navBorder;
+        text-align: center;
+    }
+
+    .navbar-link
+    {
+        color: $navText;
+
+        &:hover
+        {
+            color: $navTextHighlight;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu
+    {
+        > li > a
+        {
+            color: $navText;
+
+            &:hover,
+            &:focus
+            {
+                color: $navTextHighlight;
+            }
+        }
+
+        > .active
+        {
+            > a,
+            > a:hover,
+            > a:focus
+            {
+                color: $navTextHighlight;
+                background-color: $navBgHighlight;
+            }
+        }
+    }
+}
+
+/* The footer */
+.footer
+{
+    background-color: $footerBg;
+    border: none;
+    bottom: 0;
+    font-family: $fontNav;
+    font-size: $footerTextSize;
+    padding-top: 20px;
+    position: absolute;
+    height: $footerHeight;
+    width: 100%;
+
+    p
+    {
+        color: $footerText;
+
+        a
+        {
+            color: $footerText;
+
+            &:hover,
+            &:focus
+            {
+                color: $footerTextHighlight;
+            }
+        }
+    }
+}
+
+.input-container
+{
+    padding-top: 35%;
+}
+
+input
+{
+    border: 2px solid $inputBorder;
+    color: $inputColor;
+    font-size: 20px;
+    padding: 10px 15px;
+    width: 100%;
+
+    &:focus
+    {
+        border-color: $inputColor;
+        outline: none;
+    }
+}
+
+body
+{
+    font-family: $fontMain;
+    /* Sticky footer */
+    height: 100%;
+    margin-bottom: $footerHeight;
+}
+
+html
+{
+    /* Sticky footer */
+    min-height: 100%;
+    position: relative;
+}
