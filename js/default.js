@@ -41,7 +41,7 @@ function getMapData(query)
         data: query,
         success: function (response)
         {
-            console.log(response);
+            $('.map-container').html(response);
         },
         error: function ()
         {
