@@ -91,7 +91,7 @@ for dict in range(0,len(geo_centers_dict)):
 path = 'queries/' + str(int(time.time())) + '.json'
     
 file = open(path, 'w')
-file.write(json.dumps(dict))
+file.write(json.dumps(json_result))
 print(path)
 file.close()
 
