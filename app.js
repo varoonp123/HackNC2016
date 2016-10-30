@@ -50,7 +50,7 @@ app.get("/query/:kwd", function (req, res)
         })
     } else
     {
-        PythonShell.run('test.py', options, function (err, result)
+        PythonShell.run('Python_Script_resources/get_tweets.py', options, function (err, result)
         {
             if (err) throw error;
             fs.readFile(result[0], function (err, data)
