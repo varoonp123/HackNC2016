@@ -89,6 +89,10 @@
       .footer p a:hover, .footer p a:focus {
         color: white; }
 
+.alert {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
 .fa-search {
   cursor: pointer;
   color: #808080;
@@ -98,8 +102,27 @@
   line-height: 50px;
   min-height: 50px; }
 
-.no-padding {
-  padding: 20px 0; }
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.demos {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px; }
+  .demos .btn {
+    margin: 5px; }
+  .demos span {
+    padding: 10px; }
+
+.map {
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 0;
+  width: 60%; }
 
 input {
   border: none;
@@ -107,7 +130,7 @@ input {
   color: #808080;
   font-size: 20px;
   padding: 10px 15px;
-  width: 100%; }
+  width: 50%; }
   input:focus {
     border-color: #808080;
     outline: none; }

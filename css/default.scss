@@ -226,6 +226,12 @@ $navTextSize: 40px;
     }
 }
 
+.alert
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .fa-search
 {
     cursor: pointer;
@@ -237,9 +243,38 @@ $navTextSize: 40px;
     min-height: 50px;
 }
 
-.no-padding
+.input-container
 {
-    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.demos
+{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+
+    .btn
+    {
+        margin: 5px;
+    }
+
+    span
+    {
+        padding: 10px;
+    }
+}
+
+.map
+{
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 0;
+    width: 60%;
 }
 
 input
@@ -249,7 +284,7 @@ input
     color: $inputColor;
     font-size: $inputFontSize;
     padding: 10px 15px;
-    width: 100%;
+    width: 50%;
 
     &:focus
     {

@@ -2,7 +2,15 @@ $(document).ready(function ()
 {
     var search = $('input');
     var searchButton = $('#search');
-    var defaultVal = 'Enter map query';
+    var searchContainer = $('.input-container');
+    var demos = $('.demos');
+    var defaultVal = 'Enter a search term';
+
+    // move the search box to the around the middle of the page
+    searchContainer.css('margin-top', $(window).height() / 3);
+
+    demos.hide();
+    demos.fadeIn(1500);
 
     search.val(defaultVal);
 
@@ -20,29 +28,37 @@ $(document).ready(function ()
         keyup: function (e)
         {
             if (e.which == 13)
-                getMapData(search.val());
+                getMapData(search.val().trim().toLowerCase());
         }
     });
 
     searchButton.on({
         click: function ()
         {
-            getMapData(search.val());
+            getMapData(search.val().trim().toLowerCase());
         }
     });
-});
 
-function getMapData(query)
-{
-    $.get({
-        url: 'http://localhost:8080/query/' + query,
-        success: function (response)
-        {
-            $('.map').html(response);
-        },
-        error: function (xhr, status, error)
-        {
-            console.log('Error: ' + error.message);
-        }
-    })
-}
+    function getMapData(query)
+    {
+        $.get({
+            url: 'http://localhost:8080/query/' + query,
+            success: function (response)
+            {
+                demos.fadeOut(500, function ()
+                {
+                    // move the search box to the upper portion of the page
+                    searchContainer.animate({'margin-top': $('.navbar').height()}, 1000, function ()
+                    {
+                        var map = $('.map');
+                        map.html(response);
+                    });
+                });
+            },
+            error: function (xhr, status, error)
+            {
+                console.log('Error: ' + error.message);
+            }
+        })
+    }
+});

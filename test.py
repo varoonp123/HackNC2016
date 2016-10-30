@@ -1,1 +1,1 @@
-print "test2.json"
+print "test.json"

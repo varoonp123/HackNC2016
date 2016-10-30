@@ -6,6 +6,7 @@
             html, body, #map
             {
                 height: 100%;
+                width: 100%;
                 margin: 0;
                 padding: 0;
             }
@@ -71,7 +72,7 @@
     </head>
 
     <body>
-    <p>Twitter opinion about <%- thingVar %> is shown below:</p>
+        <div class="text-center alert alert-info">Blue represents a more positive sentiment, while red represents a more negative sentiment.</div>
         <div id="map"></div>
     </body>
 
