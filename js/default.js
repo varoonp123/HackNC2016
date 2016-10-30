@@ -37,15 +37,15 @@ $(document).ready(function ()
 function getMapData(query)
 {
     $.get({
-        url: 'http://127.0.0.1:8080/getTweet/',
+        url: 'http://45.55.90.137/query=',
         data: query,
         success: function (response)
         {
-            $('.map').html(response);
+            $('.map-container').html(response);
         },
-        error: function ()
+        error: function (xhr, status, error)
         {
-
+            console.log('Error: ' + error.message);
         }
     })
 }

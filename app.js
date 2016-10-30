@@ -3,26 +3,29 @@ var app = express();
 var bodyParser = require('body-parser');
 var PythonShell = require('python-shell');
 var cors = require('cors');
+var fs = require('fs');
+//Converter Class
+var Converter = require("csvtojson").Converter;
+var converter = new Converter({});
+
 
 app.use(cors());
-app.use(bodyParser.json());  
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// respond with "hello world" when a GET request is made to the homepage
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 
-// app.get('*', function(req, res) {
-//   console.log(req);
-//   next();
-// });
-
-app.get('/', function(req, res) {
-  res.render('index.ejs');
+app.get('/', function (req, res)
+{
+    res.render('index.ejs');
 });
 
-app.get('/getTweet/', function(req, res) {
-  res.render('map.ejs');
+app.get('/query=', function (req, res)
+{
+    // send req to python, get file
+    var csvData = parseCSV(file);
+
+    res.render('map.ejs', {csvData: csvData});
 });
 
 app.use(express.static(__dirname + '/'));
@@ -32,6 +35,16 @@ app.use(express.static(__dirname + '/'));
 //   console.log('finished');
 // });
 
-
-
 app.listen(8080);
+
+function parseCSV(file)
+{
+    //end_parsed will be emitted once parsing finished
+    converter.on("end_parsed", function (jsonArray)
+    {
+        return jsonArray; //here is your result jsonarray
+    });
+
+    //read from file
+    fs.createReadStream(file).pipe(converter);
+}
