@@ -35,8 +35,7 @@ $(document).ready(function ()
 function getMapData(query)
 {
     $.get({
-        url: 'http://localhost:8080/query/'+query,
-        // data: query,
+        url: 'http://localhost:8080/query/' + query,
         success: function (response)
         {
             $('.map').html(response);
