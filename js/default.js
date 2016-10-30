@@ -20,9 +20,7 @@ $(document).ready(function ()
         keyup: function (e)
         {
             if (e.which == 13)
-            {
                 getMapData(search.val());
-            }
         }
     });
 
@@ -37,11 +35,11 @@ $(document).ready(function ()
 function getMapData(query)
 {
     $.get({
-        url: 'http://45.55.90.137/query=',
+        url: 'http://localhost:8080/query=',
         data: query,
         success: function (response)
         {
-            $('.map-container').html(response);
+            $('.map').html(response);
         },
         error: function (xhr, status, error)
         {

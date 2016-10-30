@@ -23,8 +23,8 @@ app.get('/', function (req, res)
 app.get('/query=', function (req, res)
 {
     // send req to python, get file
-    var csvData = parseCSV(file);
-
+    var csvData = parseCSV('./Python_Script_resources/tst_vals.csv');
+    res.header('Access-Control-Allow-Origin', '*');
     res.render('map.ejs', {csvData: csvData});
 });
 

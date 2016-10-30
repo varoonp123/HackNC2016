@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
+    "csvtojson": "^1.0.3",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "python-shell": "^0.4.0"
