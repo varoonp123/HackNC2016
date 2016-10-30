@@ -1,19 +1,22 @@
 $(document).ready(function ()
 {
-    var search = $('input');
-    var searchButton = $('#search');
+    var search          = $('input');
+    var searchButton    = $('#search');
     var searchContainer = $('.input-container');
-    var demos = $('.demos');
-    var defaultVal = 'Enter a search term';
+    var demos           = $('.demos');
+    var defaultVal      = 'Enter a search term';
 
     // move the search box to the around the middle of the page
     searchContainer.css('margin-top', $(window).height() / 3);
 
+    // hide and then fade in the demos
     demos.hide();
     demos.fadeIn(1500);
 
+    // set the search bar to the default value
     search.val(defaultVal);
 
+    // search events
     search.on({
         focusin: function ()
         {
@@ -39,6 +42,10 @@ $(document).ready(function ()
         }
     });
 
+    /**
+     * Queries the server for map info based on the given query, then inserts it into the webpage.
+     * @param query - The query on which to search.
+     */
     function getMapData(query)
     {
         $.get({

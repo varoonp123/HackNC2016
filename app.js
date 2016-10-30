@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+var bodyParser  = require('body-parser');
+var cors        = require('cors');
+var express     = require('express');
+var fs          = require('fs');
 var PythonShell = require('python-shell');
-var cors = require('cors');
-var fs = require('fs');
+
+var app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -40,8 +41,6 @@ app.get("/query/:kwd", function (req, res)
 
 });
 
-
 app.use(express.static(__dirname + '/'));
-
 
 app.listen(8080);
