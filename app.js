@@ -27,32 +27,25 @@ app.get('/', function (req, res)
 
 app.get("/query/:kwd", function (req, res)
 {
-    // send req to python, get file
     var kwd = req.params.kwd;
-    // var csvData = parseCSV("./test.csv");
-    // console.log("This is the returned jsonArray" + csvData);
-    // res.header('Access-Control-Allow-Origin', '*');
-    fs.readFile("test.json", function(err, data) {
-        if (err) {
-            throw error;
-        }
-        console.log(JSON.parse(data));
-        res.render('map', {jsonData: data, thingVar: kwd});
-    });
-});
 
-// app.get("/query/:keyword", function(req, res){
-//   var keyword = req.params.keyword;
-//   res.render("map", {thingVar: keyword});
-// });
+    PythonShell.run('test.py', {args:[kwd]}, function(err, result)
+    {
+        if (err) throw error;
+        fs.readFile(result[0], function(err, data) {
+            if (err) {
+                throw error;
+            }
+            console.log(JSON.parse(data));
+            res.render('map', {jsonData: data, thingVar: kwd});
+        });
+   });
+    
+});
 
 
 app.use(express.static(__dirname + '/'));
 
-// PythonShell.run('my_script.py', function (err) {
-//   if (err) throw err;
-//   console.log('finished');
-// });
 
 app.listen(8080);
 
