@@ -1,10 +1,10 @@
 $(document).ready(function ()
 {
-    var search          = $('input');
-    var searchButton    = $('#search');
+    var search = $('input');
+    var searchButton = $('#search');
     var searchContainer = $('.input-container');
-    var demos           = $('.demos');
-    var defaultVal      = 'Enter a search term';
+    var demos = $('.demos');
+    var defaultVal = 'Enter a search term';
 
     // move the search box to the around the middle of the page
     searchContainer.css('margin-top', $(window).height() / 3);
@@ -12,6 +12,33 @@ $(document).ready(function ()
     // hide and then fade in the demos
     demos.hide();
     demos.fadeIn(1500);
+
+    $('#hillary').on({
+        click: function ()
+        {
+            var val = 'hillary clinton';
+            search.val(val);
+            getMapData(val);
+        }
+    });
+
+    $('#trump').on({
+        click: function ()
+        {
+            var val = 'donald trump';
+            search.val(val);
+            getMapData(val);
+        }
+    });
+
+    $('#microsoft').on({
+        click: function ()
+        {
+            var val = 'microsoft';
+            search.val(val);
+            getMapData(val);
+        }
+    });
 
     // set the search bar to the default value
     search.val(defaultVal);
